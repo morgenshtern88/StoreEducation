@@ -4,8 +4,5 @@ using System.Text;
 
 namespace DataLayer.Enteties.Enums
 {
-    public class Currency
-    {
-        public Enum CurrencyEnum { get; set; }
-    }
+    public enum CurrencyEnum { USD, EUR, GBP, CHF, JPY, UAH }
 }

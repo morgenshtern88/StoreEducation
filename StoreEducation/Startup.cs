@@ -19,10 +19,10 @@ namespace StoreEducation
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+       
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllers();
 
             services.AddDbContext<ApplicationContext>(options =>
              options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -31,10 +31,11 @@ namespace StoreEducation
            .AddEntityFrameworkStores<ApplicationContext>()
            .AddDefaultTokenProviders();
 
+            services.AddMvc(option => option.EnableEndpointRouting = false);
+
             services.AddMvc();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -47,7 +48,10 @@ namespace StoreEducation
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseMvc();
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

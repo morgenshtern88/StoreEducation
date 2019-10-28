@@ -11,9 +11,9 @@ namespace DataLayer.Enteties
         public string Desccription { get; set; }
         public decimal Price { get; set; }
         public IList<OrderItem> OrderItems { get; set; }
-        public string Currency { get; set; } 
-        public string Type { get; set; }
-        public string Status { get; set; }
+        public CurrencyEnum Currency { get; set; } 
+        public Enums.TypeEnum Type { get; set; }
+        public StatusEnum Status { get; set; }
         public List<AuthorInPrintingEdition> AuthorInPrintingEditions { get; set; }
         
     }

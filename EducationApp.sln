@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreEducation", "StoreEducation\StoreEducation.csproj", "{9560D406-EB22-4B28-8916-81110E3A794F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EducationApp.PresentationLayer", "StoreEducation\EducationApp.PresentationLayer.csproj", "{9560D406-EB22-4B28-8916-81110E3A794F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{5D519F17-E500-4BD2-BF9C-44A47E80CD9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EducationApp.DataLogicLayer", "DataLayer\EducationApp.DataLogicLayer.csproj", "{5D519F17-E500-4BD2-BF9C-44A47E80CD9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{37706CA6-92FD-462F-8148-7364D4F3FA76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EducationApp.BusinessLogicLayer", "BusinessLayer\EducationApp.BusinessLogicLayer.csproj", "{37706CA6-92FD-462F-8148-7364D4F3FA76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
