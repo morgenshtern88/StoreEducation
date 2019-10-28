@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Initialisation\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
 

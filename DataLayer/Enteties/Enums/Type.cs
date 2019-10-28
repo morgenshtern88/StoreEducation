@@ -6,6 +6,6 @@ namespace DataLayer.Enteties.Enums
 {
     public class Type
     {
-        public Enum TypeEnum { get; set; }
+        public enum TypeEnum  { };
     }
 }

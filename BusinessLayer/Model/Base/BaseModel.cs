@@ -4,7 +4,8 @@ using System.Text;
 
 namespace BusinessLayer.Model.Base
 {
-    class BaseModel
+    public class BaseModel
     {
+        public ICollection<string> Errors = new List<string>();
     }
 }

@@ -14,24 +14,7 @@ namespace DataLayer.AppContext
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
                     : base(options)
         {
+            
         }
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<AuthorInPrintingEdition>()
-        //        .HasKey(pt => new { pt.AuthorId, pt.PrintingEditionId });
-
-        //    modelBuilder.Entity<AuthorInPrintingEdition>()
-        //        .HasOne(pt => pt.Authors)
-        //        .WithMany(p => p.AuthorPrintingEditions)
-        //        .HasForeignKey(pt => pt.AuthorId);
-
-        //    modelBuilder.Entity<AuthorInPrintingEdition>()
-        //        .HasOne(pt => pt.PrintingEditions)
-        //        .WithMany(t => t.AuthorInPrintingEditions)
-        //        .HasForeignKey(pt => pt.PrintingEditionId);
-        //}
-
-       
-
     }
 }

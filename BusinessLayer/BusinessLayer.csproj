@@ -12,13 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\Author\" />
     <Folder Include="Model\Enums\" />
-    <Folder Include="Model\Users\" />
-    <Folder Include="Model\PrintingEdition\" />
-    <Folder Include="Model\NewFolder\" />
-    <Folder Include="Model\Orders\" />
-    <Folder Include="Model\Payments\" />
   </ItemGroup>
 
 </Project>
