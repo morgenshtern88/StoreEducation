@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using DataLayer.Enteties;
+using DataLayer.Migrations;
+using EducationApp.BusinessLogicLayer;
+using DataLayer.Initialisation;
 
 namespace StoreEducation
 {
@@ -27,17 +30,19 @@ namespace StoreEducation
             services.AddDbContext<ApplicationContext>(options =>
              options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole<long>>()
-           .AddEntityFrameworkStores<ApplicationContext>()
-           .AddDefaultTokenProviders();
+           // services.AddIdentity<ApplicationUser, IdentityRole<long>>()
+           //.AddEntityFrameworkStores<ApplicationContext>()
+           //.AddDefaultTokenProviders();
 
+            Initial.Initialisator(services, Configuration.GetConnectionString("DefaultConnection"));
+            
             services.AddMvc(option => option.EnableEndpointRouting = false);
 
-            services.AddMvc();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DataBaseInitialisation initialisation)
         {
+            initialisation.InitialisationRole();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -48,14 +53,14 @@ namespace StoreEducation
             app.UseRouting();
 
             app.UseAuthorization();
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
+            });
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseAuthentication();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            
         }
     }
 }

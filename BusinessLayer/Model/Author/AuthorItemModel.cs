@@ -7,6 +7,8 @@ namespace BusinessLayer.Model.Author
 {
     public class AuthorItemModel :BaseModel
     {
-        
+        public long Id { get; set; }
+        public string Name { get; set; }
+       
     }
 }
